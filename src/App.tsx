@@ -667,12 +667,18 @@ export default function App() {
             <p className="mt-2">본 페이지는 분양 정보 제공을 위한 목적으로 제작되었습니다. 실제 시공 및 분양 조건은 견본주택에서 확인하시기 바랍니다.</p>
           </div>
           <div className="flex gap-6">
-            <button className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white/50 hover:bg-white/10 transition-all">
+            <a 
+              href="tel:+821098308245"
+              className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white/50 hover:bg-white/10 transition-all"
+            >
               <Phone size={20} />
-            </button>
-            <button className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white/50 hover:bg-white/10 transition-all">
+            </a>
+            <a 
+              href="sms:+821098308245"
+              className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white/50 hover:bg-white/10 transition-all"
+            >
               <MessageSquare size={20} />
-            </button>
+            </a>
           </div>
         </div>
       </footer>
