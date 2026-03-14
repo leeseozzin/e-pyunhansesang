@@ -767,6 +767,47 @@ export default function App() {
                       className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
                     />
                   </div>
+                  
+                  <div className="pt-4 border-t border-slate-100">
+                    <label className="block text-sm font-bold text-slate-900 mb-4 uppercase tracking-widest">방문 상담 예약 (선택)</label>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-widest">방문 날짜</label>
+                        <input 
+                          type="date" 
+                          name="visit_date"
+                          className="w-full px-4 py-3 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all text-sm"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-widest">방문 시간</label>
+                        <select 
+                          name="visit_time"
+                          className="w-full px-4 py-3 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all text-sm appearance-none"
+                        >
+                          <option value="">시간 선택</option>
+                          <option value="10:00">10:00</option>
+                          <option value="10:30">10:30</option>
+                          <option value="11:00">11:00</option>
+                          <option value="11:30">11:30</option>
+                          <option value="12:00">12:00</option>
+                          <option value="12:30">12:30</option>
+                          <option value="13:00">13:00</option>
+                          <option value="13:30">13:30</option>
+                          <option value="14:00">14:00</option>
+                          <option value="14:30">14:30</option>
+                          <option value="15:00">15:00</option>
+                          <option value="15:30">15:30</option>
+                          <option value="16:00">16:00</option>
+                          <option value="16:30">16:30</option>
+                          <option value="17:00">17:00</option>
+                          <option value="17:30">17:30</option>
+                          <option value="18:00">18:00</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="flex items-start gap-3">
                     <input type="checkbox" id="privacy" name="privacy_agreement" className="mt-1 w-5 h-5 accent-orange-600" defaultChecked required />
                     <label htmlFor="privacy" className="text-sm text-slate-500 font-medium leading-relaxed">
