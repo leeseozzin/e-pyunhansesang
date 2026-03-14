@@ -75,8 +75,8 @@ export default function App() {
       {/* Sticky Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <div className="font-black text-xl md:text-2xl tracking-tighter text-slate-900">
-            e-Pyeonhan<span className="text-orange-600">Sesang</span>
+          <div className="font-black text-xl md:text-2xl tracking-tighter text-orange-600">
+            이편한세상
           </div>
           <button 
             onClick={openModal}
@@ -717,18 +717,20 @@ export default function App() {
                 
                 <form 
                   className="space-y-6" 
-                  action="https://formspree.io/f/mjgaoaby"
+                  action="/api/submit"
                   method="POST"
                   onSubmit={async (e) => {
                     e.preventDefault();
                     const form = e.currentTarget;
                     const formData = new FormData(form);
+                    const data = Object.fromEntries(formData.entries());
                     
                     try {
                       const response = await fetch(form.action, {
                         method: form.method,
-                        body: formData,
+                        body: JSON.stringify(data),
                         headers: {
+                          'Content-Type': 'application/json',
                           'Accept': 'application/json'
                         }
                       });
