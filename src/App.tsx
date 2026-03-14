@@ -727,7 +727,7 @@ export default function App() {
                 
                 <form 
                   className="space-y-6" 
-                  action="/api/submit"
+                  action="https://formspree.io/f/xjgaopjj"
                   method="POST"
                   onSubmit={async (e) => {
                     e.preventDefault();
@@ -750,7 +750,8 @@ export default function App() {
                         form.reset();
                         closeModal();
                       } else {
-                        alert('오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+                        const errorData = await response.json();
+                        alert(errorData.error || '오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
                       }
                     } catch (error) {
                       alert('네트워크 오류가 발생했습니다.');
