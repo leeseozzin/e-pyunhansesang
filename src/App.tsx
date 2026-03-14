@@ -666,22 +666,26 @@ export default function App() {
             <p>© 2026 이편한세상 번영로 리더스포레 분양 홍보관</p>
             <p className="mt-2">본 페이지는 분양 정보 제공을 위한 목적으로 제작되었습니다. 실제 시공 및 분양 조건은 견본주택에서 확인하시기 바랍니다.</p>
           </div>
-          <div className="flex gap-6">
-            <a 
-              href="tel:+821098308245"
-              className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white/50 hover:bg-white/10 transition-all"
-            >
-              <Phone size={20} />
-            </a>
-            <a 
-              href="sms:+821098308245"
-              className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white/50 hover:bg-white/10 transition-all"
-            >
-              <MessageSquare size={20} />
-            </a>
-          </div>
         </div>
       </footer>
+
+      {/* Fixed Contact Icons - Always visible on the right */}
+      <div className="fixed right-6 bottom-24 md:bottom-8 z-[9999] flex flex-col gap-4">
+        <a 
+          href="tel:+821098308245"
+          className="w-14 h-14 rounded-full bg-orange-600 flex items-center justify-center text-white shadow-2xl hover:bg-orange-700 transition-all active:scale-95 hover:-translate-y-1"
+          title="전화 상담"
+        >
+          <Phone size={24} />
+        </a>
+        <a 
+          href="sms:+821098308245"
+          className="w-14 h-14 rounded-full bg-slate-800 flex items-center justify-center text-white shadow-2xl hover:bg-slate-900 transition-all active:scale-95 hover:-translate-y-1"
+          title="문자 상담"
+        >
+          <MessageSquare size={24} />
+        </a>
+      </div>
 
       {/* Floating CTA for Mobile */}
       <div className="fixed bottom-6 left-6 right-6 z-40 md:hidden">
