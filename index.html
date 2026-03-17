@@ -1,1128 +1,699 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>e편한세상 번영로 리더스포레 | 울산 남구</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Noto+Serif+KR:wght@600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --black: #1C1C1E;
-      --charcoal: #2C2C2E;
-      --gold: #C9A84C;
-      --gold-light: #E2C06A;
-      --gold-pale: #F5EDD6;
-      --white: #FFFFFF;
-      --off-white: #FAF9F7;
-      --gray: #8E8E93;
-      --light-gray: #F2F2F7;
-      --border: #E5E5EA;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e편한세상 번영로 리더스포레 | 울산 남구 프리미엄 아파트 분양</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f8f5ef;
+            color: #1a1a2e;
+        }
 
-    html { scroll-behavior: smooth; }
+        /* 공통 섹션 */
+        section { padding: 80px 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .section-title {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0d1f3c;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .section-subtitle {
+            font-size: 1rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 48px;
+            font-weight: 300;
+        }
+        .gold-line {
+            width: 48px;
+            height: 3px;
+            background: #b8973a;
+            margin: 16px auto 40px;
+        }
 
-    body {
-      font-family: 'Noto Sans KR', sans-serif;
-      color: var(--black);
-      background: var(--white);
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
+        /* 헤더 */
+        header {
+            background-color: #0d1f3c;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-logo {
+            font-family: 'Noto Serif KR', serif;
+            color: #b8973a;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+        .header-phone {
+            color: #f8f5ef;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            border: 1px solid #b8973a;
+            padding: 6px 16px;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+        .header-phone:hover {
+            background: #b8973a;
+            color: #0d1f3c;
+        }
 
-    /* ── 상단바 ── */
-    .topbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-      background: rgba(28,28,30,0.96);
-      backdrop-filter: blur(12px);
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0 40px; height: 60px;
-      border-bottom: 1px solid rgba(201,168,76,0.2);
-    }
-    .topbar-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 14px; color: var(--white);
-      letter-spacing: 1px;
-    }
-    .topbar-logo span { color: var(--gold); }
-    .topbar-right { display: flex; align-items: center; gap: 20px; }
-    .topbar-tel {
-      font-size: 13px; color: rgba(255,255,255,0.6);
-      letter-spacing: 0.5px; text-decoration: none;
-      transition: color 0.2s;
-    }
-    .topbar-tel:hover { color: var(--gold); }
-    .topbar-btn {
-      background: var(--gold); color: var(--black);
-      padding: 9px 22px; font-size: 13px;
-      font-weight: 700; text-decoration: none;
-      letter-spacing: 0.5px; transition: all 0.2s;
-      font-family: 'Noto Sans KR', sans-serif;
-    }
-    .topbar-btn:hover { background: var(--gold-light); }
+        /* 히어로 섹션 */
+        .hero {
+            background: linear-gradient(135deg, #0d1f3c 0%, #1a3a6b 50%, #0d1f3c 100%);
+            padding: 100px 24px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('./images/siteplan.jpg') center/cover no-repeat;
+            opacity: 0.15;
+        }
+        .hero-content { position: relative; z-index: 1; }
+        .hero-badge {
+            display: inline-block;
+            background: #b8973a;
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            padding: 6px 20px;
+            margin-bottom: 24px;
+            border-radius: 1px;
+        }
+        .hero h1 {
+            font-family: 'Noto Serif KR', serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.3;
+            margin-bottom: 16px;
+        }
+        .hero h1 span { color: #b8973a; }
+        .hero-sub {
+            font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+            color: #c8d8f0;
+            margin-bottom: 40px;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+        .hero-cta {
+            display: inline-block;
+            background: #b8973a;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 18px 48px;
+            border-radius: 2px;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(184,151,58,0.4);
+        }
+        .hero-cta:hover {
+            background: #d4a940;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(184,151,58,0.5);
+        }
 
-    /* ── 히어로 ── */
-    .hero {
-      margin-top: 60px;
-      min-height: 100vh;
-      background: var(--black);
-      display: flex; flex-direction: column;
-      justify-content: center; align-items: center;
-      text-align: center;
-      padding: 80px 24px;
-      position: relative; overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.05) 0%, transparent 50%);
-    }
-    .hero-line {
-      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-      width: 1px; height: 80px; background: linear-gradient(to bottom, transparent, var(--gold));
-    }
-    .hero > * { position: relative; z-index: 1; }
-    .hero-eyebrow {
-      font-size: 11px; letter-spacing: 4px;
-      color: var(--gold); font-weight: 500;
-      margin-bottom: 32px; text-transform: uppercase;
-    }
-    .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(36px, 6vw, 72px);
-      color: var(--white); line-height: 1.15;
-      margin-bottom: 12px; word-break: keep-all;
-    }
-    .hero-title em {
-      font-style: italic; color: var(--gold);
-      display: block;
-    }
-    .hero-subtitle {
-      font-family: 'Noto Serif KR', serif;
-      font-size: clamp(16px, 2.5vw, 22px);
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 48px; line-height: 1.7;
-      font-weight: 600; word-break: keep-all;
-      letter-spacing: -0.3px;
-    }
-    .hero-subtitle strong { color: rgba(255,255,255,0.85); }
-    .hero-divider {
-      width: 60px; height: 1px;
-      background: var(--gold); margin: 0 auto 48px;
-    }
-    .hero-tags {
-      display: flex; gap: 12px;
-      justify-content: center; flex-wrap: wrap;
-      margin-bottom: 48px;
-    }
-    .hero-tag {
-      border: 1px solid rgba(201,168,76,0.4);
-      color: rgba(255,255,255,0.6);
-      font-size: 12px; padding: 7px 18px;
-      letter-spacing: 1px; font-weight: 300;
-    }
-    .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .btn-gold {
-      background: var(--gold); color: var(--black);
-      padding: 18px 48px; font-size: 14px;
-      font-weight: 700; text-decoration: none;
-      letter-spacing: 1px; transition: all 0.3s;
-      font-family: 'Noto Sans KR', sans-serif;
-    }
-    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
-    .btn-outline {
-      background: transparent; color: var(--white);
-      padding: 18px 48px; font-size: 14px;
-      font-weight: 300; text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.3);
-      letter-spacing: 1px; transition: all 0.3s;
-    }
-    .btn-outline:hover { border-color: var(--white); transform: translateY(-2px); }
-    .hero-scroll {
-      position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      color: rgba(255,255,255,0.3); font-size: 10px; letter-spacing: 2px;
-    }
-    .hero-scroll::after {
-      content: ''; width: 1px; height: 40px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
-    }
+        /* 핵심 혜택 */
+        .benefits { background: #fff; }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+        .benefit-card {
+            border: 1px solid #e8e0d0;
+            padding: 32px 24px;
+            text-align: center;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        .benefit-card:hover {
+            border-color: #b8973a;
+            box-shadow: 0 4px 20px rgba(184,151,58,0.15);
+            transform: translateY(-4px);
+        }
+        .benefit-icon {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+        }
+        .benefit-title {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0d1f3c;
+            margin-bottom: 8px;
+        }
+        .benefit-desc {
+            font-size: 0.9rem;
+            color: #777;
+            line-height: 1.6;
+        }
 
-    /* ── 벤치마크 바 ── */
-    .bench-bar {
-      background: var(--gold);
-      padding: 18px 24px; text-align: center;
-    }
-    .bench-bar p {
-      font-size: 13px; font-weight: 700;
-      color: var(--black); letter-spacing: 1.5px;
-    }
+        /* 마감 임박 섹션 */
+        .urgency {
+            background: linear-gradient(135deg, #0d1f3c, #1a3a6b);
+            text-align: center;
+            padding: 60px 24px;
+        }
+        .urgency-badge {
+            display: inline-block;
+            background: #b8973a;
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            padding: 6px 20px;
+            margin-bottom: 20px;
+        }
+        .urgency h2 {
+            font-family: 'Noto Serif KR', serif;
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .urgency p {
+            color: #c8d8f0;
+            font-size: 1rem;
+            margin-bottom: 32px;
+            font-weight: 300;
+        }
+        .urgency-cta {
+            display: inline-block;
+            background: #b8973a;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 16px 40px;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .urgency-cta:hover {
+            background: #d4a940;
+            transform: translateY(-2px);
+        }
 
-    /* ── 섹션 공통 ── */
-    .section { padding: 100px 24px; }
-    .section-inner { max-width: 960px; margin: 0 auto; }
-    .section-eyebrow {
-      text-align: center; font-size: 10px;
-      letter-spacing: 4px; color: var(--gold);
-      margin-bottom: 20px; text-transform: uppercase;
-      font-weight: 500;
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 4vw, 48px);
-      text-align: center; margin-bottom: 16px;
-      line-height: 1.25; word-break: keep-all;
-      letter-spacing: -0.5px;
-    }
-    .section-title.light { color: var(--white); }
-    .section-bar {
-      width: 40px; height: 2px; background: var(--gold);
-      margin: 0 auto 24px;
-    }
-    .section-desc {
-      text-align: center; color: var(--gray);
-      font-size: 15px; line-height: 1.9;
-      margin-bottom: 64px; font-weight: 300;
-      word-break: keep-all; max-width: 560px; margin-left: auto; margin-right: auto;
-    }
-    .section-desc.mb { margin-bottom: 64px; }
+        /* 조감도 섹션 */
+        .siteplan { background: #f8f5ef; }
+        .siteplan-img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 8px 40px rgba(13,31,60,0.15);
+            display: block;
+        }
 
-    /* ── 약속 섹션 ── */
-    .promise-section { background: var(--off-white); }
-    .promise-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2px; margin-bottom: 64px;
-    }
-    .promise-card {
-      background: var(--white); padding: 48px 36px;
-      position: relative; overflow: hidden;
-      transition: transform 0.3s;
-    }
-    .promise-card:hover { transform: translateY(-4px); }
-    .promise-card::before {
-      content: ''; position: absolute;
-      top: 0; left: 0; right: 0; height: 3px;
-      background: var(--gold);
-    }
-    .promise-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 48px; color: var(--gold);
-      opacity: 0.15; line-height: 1;
-      margin-bottom: 20px; font-weight: 900;
-    }
-    .promise-card h3 {
-      font-family: 'Noto Serif KR', serif;
-      font-size: 18px; font-weight: 700;
-      color: var(--black); margin-bottom: 12px;
-      line-height: 1.4;
-    }
-    .promise-card p {
-      font-size: 14px; color: var(--gray);
-      line-height: 1.8; font-weight: 300;
-    }
+        /* 입지 섹션 */
+        .location { background: #fff; }
+        .location-img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 8px 40px rgba(13,31,60,0.15);
+            margin-bottom: 40px;
+            display: block;
+        }
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .location-item {
+            background: #f8f5ef;
+            border-left: 3px solid #b8973a;
+            padding: 20px;
+            border-radius: 0 4px 4px 0;
+        }
+        .location-item h4 {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 1rem;
+            color: #0d1f3c;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+        .location-item p {
+            font-size: 0.88rem;
+            color: #666;
+            line-height: 1.5;
+        }
 
-    /* ── 지도 섹션 ── */
-    .map-section { background: var(--black); }
-    .map-section .section-desc { color: rgba(255,255,255,0.4); }
-    .map-wrap {
-      border: 1px solid rgba(201,168,76,0.2);
-      overflow: hidden;
-    }
-    .map-wrap img { width: 100%; height: auto; display: block; }
+        /* 평면도 섹션 */
+        .floorplan { background: #f8f5ef; }
+        .type-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            background: #fff;
+            border: 2px solid #e0d8c8;
+            color: #666;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 10px 28px;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: all 0.3s;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .tab-btn.active, .tab-btn:hover {
+            background: #0d1f3c;
+            border-color: #0d1f3c;
+            color: #b8973a;
+            font-weight: 700;
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .floor-img {
+            width: 100%;
+            max-width: 700px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 4px;
+            box-shadow: 0 8px 40px rgba(13,31,60,0.12);
+        }
+        .floor-info {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.8;
+        }
+        .floor-info strong {
+            color: #0d1f3c;
+            font-weight: 700;
+        }
 
-    /* ── 단지 배치도 ── */
-    .siteplan-section { background: var(--off-white); }
-    .siteplan-wrap { overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
-    .siteplan-wrap img { width: 100%; height: auto; display: block; }
+        /* 신뢰 요소 */
+        .trust { background: #0d1f3c; }
+        .trust .section-title { color: #f8f5ef; }
+        .trust .section-subtitle { color: #8a9bbf; }
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+        .trust-item {
+            text-align: center;
+            padding: 32px 20px;
+            border: 1px solid rgba(184,151,58,0.3);
+            border-radius: 4px;
+        }
+        .trust-number {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #b8973a;
+            margin-bottom: 8px;
+        }
+        .trust-label {
+            font-size: 0.9rem;
+            color: #c8d8f0;
+            font-weight: 300;
+        }
 
-    /* ── 평형 섹션 ── */
-    .type-section { background: var(--white); }
-    .type-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2px; margin-bottom: 64px;
-    }
-    .type-card { background: var(--off-white); overflow: hidden; }
-    .type-head {
-      padding: 36px 32px;
-      background: var(--black); color: var(--white);
-      position: relative;
-    }
-    .type-head.gold-head {
-      background: linear-gradient(135deg, #C9A84C, #E2C06A);
-      color: var(--black);
-    }
-    .type-head-label {
-      font-size: 10px; letter-spacing: 3px;
-      opacity: 0.5; margin-bottom: 10px; font-weight: 500;
-    }
-    .type-head h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px; font-weight: 700; margin-bottom: 6px;
-    }
-    .type-head p { font-size: 13px; opacity: 0.65; font-weight: 300; }
-    .type-body { padding: 32px; }
-    .type-row {
-      display: flex; justify-content: space-between;
-      align-items: center; padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 14px;
-    }
-    .type-row:last-child { border-bottom: none; }
-    .type-row-label { color: var(--gray); font-weight: 300; letter-spacing: 0.3px; }
-    .type-row-value { font-weight: 700; color: var(--black); font-family: 'Noto Serif KR', serif; }
-    .type-status-gold { color: var(--gold); font-weight: 700; }
-    .type-status-red { color: #C0392B; font-weight: 700; }
+        /* 방문예약 폼 */
+        .reservation { background: #fff; }
+        .form-wrap {
+            background: #f8f5ef;
+            border: 1px solid #e0d8c8;
+            border-radius: 8px;
+            padding: 48px 40px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-title {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0d1f3c;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .form-subtitle {
+            font-size: 0.9rem;
+            color: #888;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: #444;
+            margin-bottom: 8px;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #d8d0c0;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #fff;
+            color: #1a1a2e;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #b8973a;
+        }
+        .form-submit {
+            width: 100%;
+            background: #0d1f3c;
+            color: #b8973a;
+            border: none;
+            padding: 18px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            font-family: 'Noto Sans KR', sans-serif;
+            border-radius: 4px;
+            cursor: pointer;
+            letter-spacing: 0.05em;
+            transition: all 0.3s;
+            margin-top: 8px;
+        }
+        .form-submit:hover {
+            background: #b8973a;
+            color: #fff;
+        }
+        .form-note {
+            font-size: 0.8rem;
+            color: #aaa;
+            text-align: center;
+            margin-top: 16px;
+        }
 
-    /* ── 마감임박 ── */
-    .closing-banner {
-      background: var(--black);
-      border: 1px solid rgba(201,168,76,0.3);
-      padding: 28px 36px; margin-bottom: 48px;
-      display: flex; align-items: center; gap: 20px;
-    }
-    .closing-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--gold); flex-shrink: 0;
-      animation: blink 1.4s infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; } 50% { opacity: 0.2; }
-    }
-    .closing-text { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.7; font-weight: 300; }
-    .closing-text strong { color: var(--gold-light); font-weight: 700; }
+        /* 전화 CTA */
+        .phone-cta {
+            background: #b8973a;
+            text-align: center;
+            padding: 48px 24px;
+        }
+        .phone-cta p {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 16px;
+            font-weight: 300;
+        }
+        .phone-cta a {
+            display: inline-block;
+            background: #fff;
+            color: #0d1f3c;
+            font-size: 1.6rem;
+            font-weight: 900;
+            font-family: 'Noto Serif KR', serif;
+            padding: 16px 48px;
+            border-radius: 4px;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: all 0.3s;
+        }
+        .phone-cta a:hover {
+            background: #0d1f3c;
+            color: #b8973a;
+        }
 
-    /* ── 평면도 섹션 ── */
-    .floor-section { background: var(--off-white); }
-    .floor-tabs {
-      display: flex; gap: 0; margin-bottom: 40px;
-      border-bottom: 1px solid var(--border); flex-wrap: wrap;
-    }
-    .floor-tab {
-      padding: 14px 32px; font-size: 13px;
-      font-weight: 700; cursor: pointer;
-      border: none; background: transparent;
-      color: var(--gray); letter-spacing: 0.5px;
-      font-family: 'Noto Sans KR', sans-serif;
-      border-bottom: 2px solid transparent;
-      margin-bottom: -1px; transition: all 0.2s;
-    }
-    .floor-tab.active { color: var(--black); border-bottom-color: var(--gold); }
-    .floor-tab:hover { color: var(--black); }
-    .floor-content { display: none; }
-    .floor-content.active { display: block; }
-    .floor-img-wrap {
-      max-width: 680px; margin: 0 auto;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
-      background: var(--white);
-    }
-    .floor-img-wrap img { width: 100%; height: auto; display: block; }
-    .floor-specs {
-      max-width: 680px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 2px; margin-top: 2px;
-    }
-    .floor-spec {
-      background: var(--white); padding: 20px;
-      text-align: center;
-    }
-    .floor-spec-label {
-      font-size: 10px; letter-spacing: 2px;
-      color: var(--gray); margin-bottom: 8px;
-      text-transform: uppercase; font-weight: 400;
-    }
-    .floor-spec-value {
-      font-family: 'Noto Serif KR', serif;
-      font-size: 16px; font-weight: 700; color: var(--black);
-    }
+        /* 푸터 */
+        footer {
+            background: #070f1e;
+            color: #556;
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 0.82rem;
+            line-height: 1.8;
+        }
+        footer strong { color: #8a9bbf; }
 
-    /* ── 비교 섹션 ── */
-    .compare-section { background: var(--black); }
-    .compare-section .section-title { color: var(--white); }
-    .compare-section .section-desc { color: rgba(255,255,255,0.4); margin-bottom: 48px; }
-    .compare-wrap { overflow-x: auto; }
-    .compare-table {
-      width: 100%; border-collapse: collapse;
-      font-size: 14px; min-width: 500px;
-    }
-    .compare-table thead tr { border-bottom: 1px solid rgba(201,168,76,0.3); }
-    .compare-table th {
-      padding: 18px 16px; text-align: center;
-      font-size: 12px; letter-spacing: 1px;
-      color: rgba(255,255,255,0.4); font-weight: 500;
-    }
-    .compare-table th:first-child { text-align: left; }
-    .compare-table th.gold-th { color: var(--gold); }
-    .compare-table td {
-      padding: 16px; text-align: center;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      font-weight: 300; color: rgba(255,255,255,0.4);
-    }
-    .compare-table td:first-child {
-      text-align: left; color: rgba(255,255,255,0.5);
-      font-size: 13px;
-    }
-    .compare-table .good { color: var(--gold-light); font-weight: 700; }
-
-    /* ── 타임라인 섹션 ── */
-    .timeline-section { background: var(--off-white); }
-    .timeline {
-      max-width: 640px; margin: 0 auto;
-      position: relative;
-    }
-    .timeline::before {
-      content: ''; position: absolute;
-      left: 20px; top: 0; bottom: 0; width: 1px;
-      background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,0.1));
-    }
-    .timeline-item {
-      display: flex; gap: 32px; align-items: flex-start;
-      margin-bottom: 48px; position: relative;
-    }
-    .timeline-item:last-child { margin-bottom: 0; }
-    .timeline-dot {
-      width: 40px; height: 40px; border-radius: 50%;
-      background: var(--gold); flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 12px; font-weight: 700; color: var(--black);
-      position: relative; z-index: 1;
-    }
-    .timeline-dot.dim { background: var(--border); color: var(--gray); }
-    .timeline-body { padding-top: 8px; }
-    .timeline-time {
-      font-size: 11px; letter-spacing: 2px;
-      color: var(--gold); margin-bottom: 6px;
-      font-weight: 500;
-    }
-    .timeline-time.dim { color: var(--gray); }
-    .timeline-body h4 {
-      font-family: 'Noto Serif KR', serif;
-      font-size: 18px; font-weight: 700;
-      color: var(--black); margin-bottom: 6px;
-    }
-    .timeline-body p { font-size: 13px; color: var(--gray); line-height: 1.7; font-weight: 300; }
-    .timeline-price {
-      display: inline-block; margin-top: 10px;
-      background: var(--gold-pale); color: var(--black);
-      font-size: 13px; font-weight: 700;
-      padding: 6px 16px; letter-spacing: 0.5px;
-    }
-
-    /* ── 반론처리 ── */
-    .objection-section { background: var(--black); }
-    .objection-section .section-title { color: var(--white); }
-    .objection-section .section-desc { color: rgba(255,255,255,0.3); }
-    .objection-list { display: flex; flex-direction: column; gap: 2px; }
-    .objection-item {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      padding: 28px 32px;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 32px; align-items: center;
-      transition: background 0.2s;
-    }
-    .objection-item:hover { background: rgba(255,255,255,0.05); }
-    .obj-q {
-      font-size: 15px; color: rgba(255,255,255,0.35);
-      font-weight: 300; line-height: 1.6;
-      padding-right: 32px;
-      border-right: 1px solid rgba(201,168,76,0.2);
-    }
-    .obj-a { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.8; font-weight: 300; }
-    .obj-a strong { color: var(--gold-light); font-weight: 700; display: block; margin-bottom: 4px; }
-
-    /* ── 후기 섹션 ── */
-    .review-section { background: var(--off-white); }
-    .review-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2px;
-    }
-    .review-card {
-      background: var(--white); padding: 40px 32px;
-      position: relative;
-    }
-    .review-mark {
-      font-family: 'Playfair Display', serif;
-      font-size: 64px; color: var(--gold); opacity: 0.15;
-      line-height: 1; position: absolute; top: 20px; left: 28px;
-    }
-    .review-text {
-      font-size: 14px; line-height: 1.9; color: var(--charcoal);
-      margin-bottom: 24px; font-weight: 300; position: relative; z-index: 1;
-      padding-top: 24px;
-    }
-    .review-author {
-      font-size: 12px; font-weight: 700; color: var(--black);
-      letter-spacing: 1px; text-transform: uppercase;
-    }
-    .review-author span { color: var(--gold); }
-
-    /* ── 신뢰도 섹션 ── */
-    .trust-section { background: var(--white); }
-    .trust-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 2px;
-    }
-    .trust-item {
-      background: var(--off-white); padding: 32px 20px;
-      text-align: center; transition: background 0.2s;
-    }
-    .trust-item:hover { background: var(--gold-pale); }
-    .trust-icon { font-size: 28px; margin-bottom: 12px; }
-    .trust-item h4 {
-      font-family: 'Noto Serif KR', serif;
-      font-size: 13px; font-weight: 700;
-      color: var(--black); margin-bottom: 6px;
-    }
-    .trust-item p { font-size: 12px; color: var(--gray); line-height: 1.6; font-weight: 300; }
-
-    /* ── 폼 섹션 ── */
-    .form-section { background: var(--black); }
-    .form-section .section-title { color: var(--white); }
-    .form-section .section-desc { color: rgba(255,255,255,0.35); }
-    .form-wrap {
-      max-width: 520px; margin: 0 auto;
-      background: var(--white);
-      padding: 52px 48px;
-    }
-    .form-group { margin-bottom: 20px; }
-    .form-label {
-      display: block; font-size: 10px; font-weight: 700;
-      color: var(--black); margin-bottom: 8px;
-      letter-spacing: 2px; text-transform: uppercase;
-    }
-    .form-label span { color: var(--gold); }
-    .form-input, .form-select {
-      width: 100%; padding: 14px 16px;
-      border: 1px solid var(--border); border-radius: 0;
-      font-size: 14px; outline: none;
-      font-family: 'Noto Sans KR', sans-serif;
-      color: var(--black); background: var(--off-white);
-      transition: border-color 0.2s, background 0.2s;
-      -webkit-appearance: none;
-    }
-    .form-input:focus, .form-select:focus {
-      border-color: var(--gold); background: var(--white);
-    }
-    .form-btn {
-      width: 100%; padding: 18px;
-      background: var(--gold); color: var(--black);
-      border: none; font-size: 14px; font-weight: 700;
-      cursor: pointer; margin-top: 8px;
-      letter-spacing: 2px; text-transform: uppercase;
-      font-family: 'Noto Sans KR', sans-serif;
-      transition: all 0.2s;
-    }
-    .form-btn:hover { background: var(--gold-light); transform: translateY(-2px); }
-    .form-note {
-      font-size: 11px; color: var(--gray);
-      text-align: center; margin-top: 16px;
-      line-height: 1.8; font-weight: 300;
-    }
-
-    /* ── 중간 CTA ── */
-    .mid-cta { text-align: center; margin-top: 64px; }
-    .cta-link {
-      display: inline-flex; align-items: center; gap: 12px;
-      font-size: 13px; font-weight: 700;
-      letter-spacing: 2px; text-decoration: none;
-      color: var(--black); text-transform: uppercase;
-      transition: gap 0.2s;
-    }
-    .cta-link::after {
-      content: '→'; font-size: 16px; transition: transform 0.2s;
-    }
-    .cta-link:hover::after { transform: translateX(4px); }
-    .cta-link.light { color: rgba(255,255,255,0.5); }
-    .cta-link.light:hover { color: var(--white); }
-    .cta-link.gold { color: var(--gold); }
-
-    /* ── 하단 고정 CTA ── */
-    .bottom-bar {
-      position: fixed; bottom: 0; left: 0; right: 0;
-      display: flex; z-index: 998;
-      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
-    }
-    .bottom-bar a {
-      flex: 1; padding: 18px; text-align: center;
-      font-size: 13px; font-weight: 700;
-      text-decoration: none; letter-spacing: 1px;
-      font-family: 'Noto Sans KR', sans-serif;
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      transition: opacity 0.2s;
-    }
-    .bottom-bar a:hover { opacity: 0.9; }
-    .bottom-call { background: var(--charcoal); color: var(--white); }
-    .bottom-reserve { background: var(--gold); color: var(--black); }
-
-    /* ── 푸터 ── */
-    footer {
-      background: #0A0A0B; color: rgba(255,255,255,0.25);
-      padding: 48px 24px 100px; text-align: center;
-      font-size: 11px; line-height: 2.2; font-weight: 300;
-      letter-spacing: 0.5px;
-    }
-    .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 16px; color: rgba(255,255,255,0.5);
-      margin-bottom: 16px; letter-spacing: 1px;
-    }
-    .footer-logo span { color: var(--gold); }
-    .footer-bar {
-      width: 30px; height: 1px;
-      background: rgba(201,168,76,0.3);
-      margin: 20px auto;
-    }
-
-    /* ── 반응형 ── */
-    @media (max-width: 640px) {
-      .topbar { padding: 0 20px; }
-      .topbar-tel { display: none; }
-      .form-wrap { padding: 36px 24px; }
-      .objection-item { grid-template-columns: 1fr; gap: 16px; }
-      .obj-q { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.2); padding-right: 0; padding-bottom: 16px; }
-      .floor-tab { padding: 10px 18px; font-size: 12px; }
-    }
-  </style>
+        /* 반응형 */
+        @media (max-width: 600px) {
+            section { padding: 60px 16px; }
+            .form-wrap { padding: 32px 20px; }
+            .hero { padding: 80px 16px 60px; }
+        }
+    </style>
 </head>
 <body>
 
-<!-- 상단바 -->
-<div class="topbar">
-  <div class="topbar-logo">e편한세상 <span>번영로 리더스포레</span></div>
-  <div class="topbar-right">
-    <a href="tel:1555-1398" class="topbar-tel">☎ 1555-1398</a>
-    <a href="#form" class="topbar-btn">방문 예약</a>
-  </div>
-</div>
+<!-- 헤더 -->
+<header>
+    <div class="header-logo">e편한세상 번영로 리더스포레</div>
+    <a href="tel:15551398" class="header-phone">📞 1555-1398</a>
+</header>
 
 <!-- 히어로 -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-line"></div>
-  <p class="hero-eyebrow">Ulsan Nam-gu · Premium Residence</p>
-  <h1 class="hero-title">
-    지금 사는 사람과<br>
-    <em>나중에 사는 사람.</em>
-  </h1>
-  <p class="hero-subtitle">
-    <strong>트램 확정 전, 마지막 5억대 신축.</strong><br>
-    그 차이는 수천만 원이 됩니다.
-  </p>
-  <div class="hero-divider"></div>
-  <div class="hero-tags">
-    <span class="hero-tag">DL이앤씨 시공</span>
-    <span class="hero-tag">중도금 전액 무이자</span>
-    <span class="hero-tag">계약금 5% 현금지원</span>
-    <span class="hero-tag">트램 2호선 예정</span>
-  </div>
-  <div class="hero-btns">
-    <a href="#form" class="btn-gold">방문 예약하기</a>
-    <a href="tel:1555-1398" class="btn-outline">☎ 전화 상담</a>
-  </div>
-  <div class="hero-scroll">SCROLL</div>
+    <div class="hero-content">
+        <div class="hero-badge">울산 남구 프리미엄 분양</div>
+        <h1>울산의 새로운 기준<br><span>e편한세상 번영로 리더스포레</span></h1>
+        <p class="hero-sub">
+            DL이앤씨 브랜드 아파트 · 트램 2호선 예정 · 서남호수공원 5분<br>
+            중도금 무이자 · 계약금 5% 지원
+        </p>
+        <a href="#reservation" class="hero-cta">지금 방문 예약하기</a>
+    </div>
 </section>
 
-<!-- 혜택 배너 -->
-<div class="bench-bar">
-  <p>중도금 전액 무이자 &nbsp;·&nbsp; 계약금 5% 현금지원 &nbsp;·&nbsp; 전세보다 낮은 월 부담</p>
-</div>
-
-<!-- 약속 섹션 -->
-<section class="section promise-section">
-  <div class="section-inner">
-    <p class="section-eyebrow">Our Promise</p>
-    <h2 class="section-title">이 아파트가 특별한<br>네 가지 이유</h2>
-    <div class="section-bar"></div>
-    <p class="section-desc mb">입지, 가격, 브랜드, 혜택.<br>네 가지가 동시에 맞아떨어지는 기회는 흔하지 않습니다.</p>
-    <div class="promise-grid">
-      <div class="promise-card">
-        <div class="promise-num">01</div>
-        <h3>울산 남구에서<br>마지막 5억대 신축</h3>
-        <p>타 남구 신축이 7~8억대인 지금, 5억대 진입 기회는 이 단지가 마지막입니다. 완판 이후 동일 조건은 없습니다.</p>
-      </div>
-      <div class="promise-card">
-        <div class="promise-num">02</div>
-        <h3>트램 확정 전<br>선점의 기회</h3>
-        <p>부동산 호재는 소문날 때 사서 확정될 때 팝니다. 트램 2호선 확정 후엔 이미 가격에 반영됩니다.</p>
-      </div>
-      <div class="promise-card">
-        <div class="promise-num">03</div>
-        <h3>5중 입지<br>방어막</h3>
-        <p>트램·초품아·공세권·직주근접·희소평형. 다섯 개가 동시에 작동하는 입지는 시장이 흔들려도 지켜집니다.</p>
-      </div>
-      <div class="promise-card">
-        <div class="promise-num">04</div>
-        <h3>목돈 없어도<br>가능한 구조</h3>
-        <p>계약금 5% 현금지원에 중도금 전액 무이자. 전세 사는 것보다 오히려 월 부담이 적습니다.</p>
-      </div>
+<!-- 핵심 혜택 -->
+<section class="benefits">
+    <div class="container">
+        <h2 class="section-title">지금 선택해야 하는 이유</h2>
+        <div class="gold-line"></div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">🚊</div>
+                <div class="benefit-title">트램 2호선 예정</div>
+                <div class="benefit-desc">개통 시 18~23% 가격 상승 예상<br>교통 호재 직접 수혜 단지</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🏫</div>
+                <div class="benefit-title">초등학교 도보 200m</div>
+                <div class="benefit-desc">안전한 통학 환경<br>학부모 선호 1순위 입지</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🌿</div>
+                <div class="benefit-title">서남호수공원 5분</div>
+                <div class="benefit-desc">자연 속 주거 환경<br>산책·운동·여가 모두 가능</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <div class="benefit-title">중도금 무이자</div>
+                <div class="benefit-desc">계약금 5% 지원<br>초기 부담 대폭 절감</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🏆</div>
+                <div class="benefit-title">DL이앤씨 시공</div>
+                <div class="benefit-desc">대한민국 대표 건설사<br>검증된 품질과 브랜드 가치</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🛒</div>
+                <div class="benefit-title">상산·성남 상권 5분</div>
+                <div class="benefit-desc">생활 편의시설 완비<br>편리한 일상 생활 보장</div>
+            </div>
+        </div>
     </div>
-    <div class="mid-cta">
-      <a href="#form" class="cta-link">지금 방문 예약하기</a>
-    </div>
-  </div>
 </section>
 
-<!-- 입지 지도 섹션 -->
-<section class="section map-section">
-  <div class="section-inner">
-    <p class="section-eyebrow">Location</p>
-    <h2 class="section-title light">입지를 보면<br>답이 보입니다.</h2>
-    <div class="section-bar"></div>
-    <p class="section-desc">트램 2호선 예정 노선, 초등학교 200m, 선암호수공원.<br>모든 호재가 이 단지를 중심으로 집결합니다.</p>
-    <div class="map-wrap">
-      <img src="./images/map.jpg" alt="e편한세상 번영로 리더스포레 입지 지도" loading="lazy" />
-    </div>
-    <div class="mid-cta">
-      <a href="#form" class="cta-link light">이 입지, 직접 확인하러 가기</a>
-    </div>
-  </div>
+<!-- 마감 임박 -->
+<section class="urgency">
+    <div class="urgency-badge">⚠ 잔여 세대 마감 임박</div>
+    <h2>지금이 마지막 기회입니다</h2>
+    <p>극소수 잔여 세대만 남았습니다. 원하시는 타입이 있다면 지금 바로 문의하세요.</p>
+    <a href="#reservation" class="urgency-cta">방문 예약 바로하기</a>
 </section>
 
-<!-- 단지 배치도 -->
-<section class="section siteplan-section">
-  <div class="section-inner">
-    <p class="section-eyebrow">Site Plan</p>
-    <h2 class="section-title">단지 배치도</h2>
-    <div class="section-bar"></div>
-    <p class="section-desc">피트니스 · 라운지카페 · 스크린골프룸 · 키즈스테이션<br>단지 안에서 누리는 프리미엄 커뮤니티</p>
-    <div class="siteplan-wrap">
-      <img src="./images/siteplan.jpg" alt="e편한세상 번영로 리더스포레 단지 배치도" loading="lazy" />
+<!-- 단지 조감도 -->
+<section class="siteplan">
+    <div class="container">
+        <h2 class="section-title">단지 배치도</h2>
+        <div class="gold-line"></div>
+        <img src="./images/siteplan.jpg" alt="e편한세상 번영로 리더스포레 단지 배치도" class="siteplan-img" loading="lazy">
     </div>
-  </div>
 </section>
 
-<!-- 잔여세대 섹션 -->
-<section class="section type-section">
-  <div class="section-inner">
-    <p class="section-eyebrow">Availability</p>
-    <h2 class="section-title">잔여 세대 안내</h2>
-    <div class="section-bar"></div>
-    <p class="section-desc mb">완판 이후엔 동일 조건 재공급이 없습니다.</p>
-    <div class="closing-banner">
-      <div class="closing-dot"></div>
-      <p class="closing-text">
-        <strong>현재 실시간 마감 진행중</strong> — 잔여세대가 빠르게 소진되고 있습니다.<br>
-        지금 이 순간에도 상담 문의가 접수되고 있습니다. 조건 확인은 1분이면 됩니다.
-      </p>
+<!-- 입지 -->
+<section class="location">
+    <div class="container">
+        <h2 class="section-title">탁월한 입지 조건</h2>
+        <div class="gold-line"></div>
+        <img src="./images/map.jpg" alt="e편한세상 번영로 리더스포레 입지 지도" class="location-img" loading="lazy">
+        <div class="location-grid">
+            <div class="location-item">
+                <h4>🚊 트램 2호선</h4>
+                <p>예정 노선 직접 수혜<br>개통 후 교통 혁신</p>
+            </div>
+            <div class="location-item">
+                <h4>🏫 초등학교</h4>
+                <p>도보 200m 이내<br>안전한 통학 환경</p>
+            </div>
+            <div class="location-item">
+                <h4>🌿 서남호수공원</h4>
+                <p>도보 5분 거리<br>자연 속 생활 가능</p>
+            </div>
+            <div class="location-item">
+                <h4>🛒 상산·성남 상권</h4>
+                <p>차량 5분 거리<br>편리한 생활 인프라</p>
+            </div>
+        </div>
     </div>
-    <div class="type-grid">
-      <div class="type-card">
-        <div class="type-head gold-head">
-          <p class="type-head-label">SMALL TYPE · 희소 평형</p>
-          <h3>25평형</h3>
-          <p>선착순 마감 진행중</p>
-        </div>
-        <div class="type-body">
-          <div class="type-row">
-            <span class="type-row-label">전용면적</span>
-            <span class="type-row-value">59㎡</span>
-          </div>
-          <div class="type-row">
-            <span class="type-row-label">계약금</span>
-            <span class="type-row-value">5% 현금지원</span>
-          </div>
-          <div class="type-row">
-            <span class="type-row-label">중도금</span>
-            <span class="type-row-value">전액 무이자</span>
-          </div>
-          <div class="type-row">
-            <span class="type-row-label">잔여현황</span>
-            <span class="type-row-value type-status-gold">⚡ 마감 임박</span>
-          </div>
-        </div>
-      </div>
-      <div class="type-card">
-        <div class="type-head">
-          <p class="type-head-label">FAMILY TYPE · 실수요 가족형</p>
-          <h3>34평형</h3>
-          <p>극소수 잔여 · 마감 임박</p>
-        </div>
-        <div class="type-body">
-          <div class="type-row">
-            <span class="type-row-label">전용면적</span>
-            <span class="type-row-value">84㎡</span>
-          </div>
-          <div class="type-row">
-            <span class="type-row-label">계약금</span>
-            <span class="type-row-value">5% 현금지원</span>
-          </div>
-          <div class="type-row">
-            <span class="type-row-label">중도금</span>
-            <span class="type-row-value">전액 무이자</span>
-          </div>
-          <div class="type-row">
-            <span class="type-row-label">잔여현황</span>
-            <span class="type-row-value type-status-red">🚨 극소수 잔여</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="mid-cta">
-      <a href="#form" class="cta-link">잔여세대 확인하기</a>
-    </div>
-  </div>
 </section>
 
-<!-- 평면도 섹션 -->
-<section class="section floor-section">
-  <div class="section-inner">
-    <p class="section-eyebrow">Floor Plan</p>
-    <h2 class="section-title">내가 살게 될 공간</h2>
-    <div class="section-bar"></div>
-    <p class="section-desc">오픈된 거실, 극대화된 채광, 실용적인 수납.<br>평면도를 보는 순간 확신이 옵니다.</p>
-    <div class="floor-tabs">
-      <button class="floor-tab active" onclick="showFloor('fp25', this)">25평형 (59㎡)</button>
-      <button class="floor-tab" onclick="showFloor('fp84a', this)">34평형 A타입</button>
-      <button class="floor-tab" onclick="showFloor('fp84b', this)">34평형 B타입</button>
-      <button class="floor-tab" onclick="showFloor('fp84c', this)">34평형 C타입</button>
+<!-- 평면도 -->
+<section class="floorplan">
+    <div class="container">
+        <h2 class="section-title">평면도 안내</h2>
+        <div class="gold-line"></div>
+        <div class="type-tabs">
+            <button class="tab-btn active" onclick="showTab('t25')">25평형 (59㎡)</button>
+            <button class="tab-btn" onclick="showTab('t84a')">34평형 A타입 (84㎡)</button>
+            <button class="tab-btn" onclick="showTab('t84b')">34평형 B타입 (84㎡)</button>
+            <button class="tab-btn" onclick="showTab('t84c')">34평형 C타입 (84㎡)</button>
+        </div>
+        <div id="t25" class="tab-content active">
+            <img src="./images/floor-25.jpg" alt="25평형 평면도" class="floor-img" loading="lazy">
+            <div class="floor-info">
+                <strong>59㎡ (25평형)</strong><br>
+                전용면적 59㎡ · 분양가 5억 후반 ~ 6억대<br>
+                실용적인 구조로 소형 가족 및 투자자에게 최적
+            </div>
+        </div>
+        <div id="t84a" class="tab-content">
+            <img src="./images/floor-84a.jpg" alt="34평형 A타입 평면도" class="floor-img" loading="lazy">
+            <div class="floor-info">
+                <strong>84㎡ A타입 (34평형)</strong><br>
+                전용면적 84㎡ · 분양가 7억 중반 ~ 8억 중반<br>
+                넓은 거실과 실용적인 주방 구조
+            </div>
+        </div>
+        <div id="t84b" class="tab-content">
+            <img src="./images/floor-84b.jpg" alt="34평형 B타입 평면도" class="floor-img" loading="lazy">
+            <div class="floor-info">
+                <strong>84㎡ B타입 (34평형)</strong><br>
+                전용면적 84㎡ · 분양가 7억 중반 ~ 8억 중반<br>
+                4베이 구조로 채광 및 통풍 최적화
+            </div>
+        </div>
+        <div id="t84c" class="tab-content">
+            <img src="./images/floor-84c.jpg" alt="34평형 C타입 평면도" class="floor-img" loading="lazy">
+            <div class="floor-info">
+                <strong>84㎡ C타입 (34평형)</strong><br>
+                전용면적 84㎡ · 분양가 7억 중반 ~ 8억 중반<br>
+                드레스룸 및 알파룸 포함 수납 특화 구조
+            </div>
+        </div>
     </div>
-    <div class="floor-content active" id="fp25">
-      <div class="floor-img-wrap">
-        <img src="./images/floor-25.jpg" alt="25평형 평면도" loading="lazy" />
-      </div>
-      <div class="floor-specs">
-        <div class="floor-spec">
-          <div class="floor-spec-label">전용면적</div>
-          <div class="floor-spec-value">59㎡</div>
-        </div>
-        <div class="floor-spec">
-          <div class="floor-spec-label">구조</div>
-          <div class="floor-spec-value">3룸</div>
-        </div>
-        <div class="floor-spec">
-          <div class="floor-spec-label">잔여현황</div>
-          <div class="floor-spec-value" style="color:var(--gold)">마감 임박</div>
-        </div>
-      </div>
-    </div>
-    <div class="floor-content" id="fp84a">
-      <div class="floor-img-wrap">
-        <img src="./images/floor-84a.jpg" alt="34평형 A타입 평면도" loading="lazy" />
-      </div>
-      <div class="floor-specs">
-        <div class="floor-spec">
-          <div class="floor-spec-label">전용면적</div>
-          <div class="floor-spec-value">84㎡ A</div>
-        </div>
-        <div class="floor-spec">
-          <div class="floor-spec-label">구조</div>
-          <div class="floor-spec-value">3룸</div>
-        </div>
-        <div class="floor-spec">
-          <div class="floor-spec-label">잔여현황</div>
-          <div class="floor-spec-value" style="color:#C0392B">극소수 잔여</div>
-        </div>
-      </div>
-    </div>
-    <div class="floor-content" id="fp84b">
-      <div class="floor-img-wrap">
-        <img src="./images/floor-84b.jpg" alt="34평형 B타입 평면도" loading="lazy" />
-      </div>
-      <div class="floor-specs">
-        <div class="floor-spec">
-          <div class="floor-spec-label">전용면적</div>
-          <div class="floor-spec-value">84㎡ B</div>
-        </div>
-        <div class="floor-spec">
-          <div class="floor-spec-label">구조</div>
-          <div class="floor-spec-value">3룸</div>
-        </div>
-        <div class="floor-spec">
-          <div class="floor-spec-label">잔여현황</div>
-          <div class="floor-spec-value" style="color:#C0392B">극소수 잔여</div>
-        </div>
-      </div>
-    </div>
-    <div class="floor-content" id="fp84c">
-      <div class="floor-img-wrap">
-        <img src="./images/floor-84c.jpg" alt="34평형 C타입 평면도" loading="lazy" />
-      </div>
-      <div class="floor-specs">
-        <div class="floor-spec">
-          <div class="floor-spec-label">전용면적</div>
-          <div class="floor-spec-value">84㎡ C</div>
-        </div>
-        <div class="floor-spec">
-          <div class="floor-spec-label">구조</div>
-          <div class="floor-spec-value">3룸</div>
-        </div>
-        <div class="floor-spec">
-          <div class="floor-spec-label">잔여현황</div>
-          <div class="floor-spec-value" style="color:#C0392B">극소수 잔여</div>
-        </div>
-      </div>
-    </div>
-    <div class="mid-cta">
-      <a href="#form" class="cta-link">평면도 실물 확인 — 방문 예약</a>
-    </div>
-  </div>
 </section>
 
-<!-- 비교 섹션 -->
-<section class="section compare-section">
-  <div class="section-inner">
-    <p class="section-eyebrow">Comparison</p>
-    <h2 class="section-title light">같은 남구, 같은 신축.<br>왜 여기만 5억대입니까?</h2>
-    <div class="section-bar"></div>
-    <p class="section-desc">숫자로 비교하면 선택은 명확해집니다.</p>
-    <div class="compare-wrap">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th>구분</th>
-            <th>타 남구 신축</th>
-            <th class="gold-th">리더스포레</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>평균 분양가</td><td>7~8억대</td><td class="good">5~6억대</td></tr>
-          <tr><td>초등학교 거리</td><td>500m+</td><td class="good">200m</td></tr>
-          <tr><td>공원 접근성</td><td>없음</td><td class="good">도보 5분</td></tr>
-          <tr><td>트램 호재</td><td>미해당</td><td class="good">2호선 예정</td></tr>
-          <tr><td>계약금 혜택</td><td>없음</td><td class="good">5% 현금지원</td></tr>
-          <tr><td>중도금</td><td>이자 발생</td><td class="good">전액 무이자</td></tr>
-          <tr><td>시공사</td><td>중소건설사</td><td class="good">DL이앤씨</td></tr>
-        </tbody>
-      </table>
+<!-- 신뢰 수치 -->
+<section class="trust">
+    <div class="container">
+        <h2 class="section-title">숫자로 보는 신뢰</h2>
+        <div class="gold-line"></div>
+        <div class="trust-grid">
+            <div class="trust-item">
+                <div class="trust-number">254</div>
+                <div class="trust-label">총 세대수</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">37F</div>
+                <div class="trust-label">최고 층수</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">200m</div>
+                <div class="trust-label">초등학교 거리</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">5%</div>
+                <div class="trust-label">계약금 지원</div>
+            </div>
+        </div>
     </div>
-    <div class="mid-cta">
-      <a href="#form" class="cta-link light">지금 방문 예약하기</a>
-    </div>
-  </div>
 </section>
 
-<!-- 트램 타임라인 섹션 -->
-<section class="section timeline-section">
-  <div class="section-inner">
-    <p class="section-eyebrow">Investment Timeline</p>
-    <h2 class="section-title">트램 확정 전에 사는 사람과<br>확정 후에 사는 사람.</h2>
-    <div class="section-bar"></div>
-    <p class="section-desc">부동산 호재는 소문날 때 사서, 확정될 때 팝니다.<br>지금은 소문이 퍼지기 시작한 시점입니다.</p>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot">NOW</div>
-        <div class="timeline-body">
-          <p class="timeline-time">지금 이 순간</p>
-          <h4>트램 2호선 예정 — 착공 전</h4>
-          <p>호재가 가격에 아직 반영되지 않은 상태. 가장 싸게 살 수 있는 유일한 타이밍입니다.</p>
-          <span class="timeline-price">5억대 진입 가능</span>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot dim">D+1</div>
-        <div class="timeline-body">
-          <p class="timeline-time dim">트램 착공 확정 후</p>
-          <h4>역세권 프리미엄 즉시 반영</h4>
-          <p>확정 발표 직후 호재가 시세에 반영됩니다. 이 타이밍에 사면 이미 늦습니다.</p>
-          <span class="timeline-price" style="background:#f0f0f0;color:#999;">6~7억대 예상</span>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot dim">D+2</div>
-        <div class="timeline-body">
-          <p class="timeline-time dim">트램 완공 후</p>
-          <h4>역세권 시세 완전 반영</h4>
-          <p>타 지역 트램 노선 사례 기준 평균 18~23% 시세 상승. 지금 사는 사람의 자산이 됩니다.</p>
-          <span class="timeline-price" style="background:#f0f0f0;color:#999;">7~8억대 이상 예상</span>
-        </div>
-      </div>
-    </div>
-    <div class="mid-cta">
-      <a href="#form" class="cta-link gold">지금이 가장 싼 타이밍입니다 →</a>
-    </div>
-  </div>
-</section>
-
-<!-- 반론처리 섹션 -->
-<section class="section objection-section">
-  <div class="section-inner">
-    <p class="section-eyebrow">FAQ</p>
-    <h2 class="section-title light">망설이는 이유,<br>다 압니다.</h2>
-    <div class="section-bar"></div>
-    <p class="section-desc">하나씩 해결해드리겠습니다.</p>
-    <div class="objection-list">
-      <div class="objection-item">
-        <div class="obj-q">지금 당장 목돈이 없어서 엄두가 안 납니다.</div>
-        <div class="obj-a">
-          <strong>계약금 5% 현금지원 + 중도금 전액 무이자</strong>
-          전세 보증금보다 낮은 초기 비용으로 내 집 마련이 가능합니다.
-        </div>
-      </div>
-      <div class="objection-item">
-        <div class="obj-q">집값이 떨어질까봐 걱정됩니다.</div>
-        <div class="obj-a">
-          <strong>5중 입지 방어막 — 트램·초품아·공세권·직주근접·희소평형</strong>
-          입지가 있는 집은 시장이 흔들려도 가장 늦게, 가장 적게 흔들립니다.
-        </div>
-      </div>
-      <div class="objection-item">
-        <div class="obj-q">전세 계약이 아직 남아있습니다.</div>
-        <div class="obj-a">
-          <strong>입주 일정 · 잔금 구조 개별 상담 가능</strong>
-          상황에 맞는 맞춤 플랜을 함께 설계해드립니다.
-        </div>
-      </div>
-      <div class="objection-item">
-        <div class="obj-q">25평은 좀 작지 않을까요?</div>
-        <div class="obj-a">
-          <strong>울산 남구 신축 희소 소형 평형</strong>
-          1~2인 가구 증가와 소형 신축 공급 감소로 희소가치가 높아지고 있습니다.
-        </div>
-      </div>
-      <div class="objection-item">
-        <div class="obj-q">조금 더 생각해보고 결정하고 싶습니다.</div>
-        <div class="obj-a">
-          <strong>선착순 마감 — 완판 후 동일 조건 재공급 없음</strong>
-          생각하는 사이에 세대가 마감됩니다. 일단 조건만 확인하시고 결정하셔도 됩니다.
-        </div>
-      </div>
-    </div>
-    <div class="mid-cta">
-      <a href="#form" class="cta-link light">일단 조건만 확인하기</a>
-    </div>
-  </div>
-</section>
-
-<!-- 후기 섹션 -->
-<section class="section review-section">
-  <div class="section-inner">
-    <p class="section-eyebrow">Reviews</p>
-    <h2 class="section-title">먼저 결정한 사람들이<br>남긴 말</h2>
-    <div class="section-bar"></div>
-    <p class="section-desc">보고 나서 결정하셔도 됩니다.<br>단, 세대가 남아있을 때까지만.</p>
-    <div class="review-grid">
-      <div class="review-card">
-        <div class="review-mark">"</div>
-        <p class="review-text">신혼인데 목돈이 없어서 포기하려 했는데, 계약금 지원받고 중도금 무이자로 하니까 전세보다 오히려 부담이 적었어요.</p>
-        <p class="review-author">30대 신혼부부 <span>· 계약자</span></p>
-      </div>
-      <div class="review-card">
-        <div class="review-mark">"</div>
-        <p class="review-text">트램에 호수공원에 초등학교까지. 이 가격에 이 입지라면 안 살 이유를 찾지 못했습니다. 보자마자 계약했어요.</p>
-        <p class="review-author">40대 실수요자 <span>· 계약자</span></p>
-      </div>
-      <div class="review-card">
-        <div class="review-mark">"</div>
-        <p class="review-text">입지 분석해보니 지금이 가장 싸게 살 수 있는 타이밍이더라고요. 결정하고 나서 오히려 후련했습니다.</p>
-        <p class="review-author">30대 투자 겸 실거주 <span>· 계약자</span></p>
-      </div>
-    </div>
-    <div class="mid-cta">
-      <a href="#form" class="cta-link">나도 지금 방문 예약하기</a>
-    </div>
-  </div>
-</section>
-
-<!-- 신뢰도 섹션 -->
-<section class="section trust-section">
-  <div class="section-inner">
-    <p class="section-eyebrow">Trust</p>
-    <h2 class="section-title">믿고 계약할 수 있는 이유</h2>
-    <div class="section-bar"></div>
-    <p class="section-desc">대한민국 대표 건설사 DL이앤씨가 짓습니다.</p>
-    <div class="trust-grid">
-      <div class="trust-item">
-        <div class="trust-icon">🏗️</div>
-        <h4>DL이앤씨 시공</h4>
-        <p>대한민국 대표<br>건설사 브랜드</p>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon">🛡️</div>
-        <h4>HUG 분양보증</h4>
-        <p>주택도시보증공사<br>분양보증 적용</p>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon">📍</div>
-        <h4>울산 남구 야음동</h4>
-        <p>번영로 생활권<br>핵심 입지</p>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon">🏢</div>
-        <h4>지하5~지상37층</h4>
-        <p>총 254세대<br>랜드마크 단지</p>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon">📞</div>
-        <h4>분양 상담</h4>
-        <p>1555-1398<br>평일·주말 운영</p>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon">🕐</div>
-        <h4>운영시간</h4>
-        <p>평일 10~18시<br>주말 10~17시</p>
-      </div>
-    </div>
-  </div>
+<!-- 전화 CTA -->
+<section class="phone-cta">
+    <p>궁금하신 점은 지금 바로 전화 문의하세요</p>
+    <a href="tel:15551398">📞 1555-1398</a>
 </section>
 
 <!-- 방문예약 폼 -->
-<section class="section form-section" id="form">
-  <div class="section-inner">
-    <p class="section-eyebrow">Reservation</p>
-    <h2 class="section-title light">지금 방문 예약하세요</h2>
-    <div class="section-bar"></div>
-    <p class="section-desc">조건만 확인하고 오셔도 됩니다.<br>보면 삽니다. 그만큼 조건이 말이 됩니다.</p>
-    <div class="form-wrap">
-      <form action="https://formspree.io/f/xreyozgj" method="POST">
-        <div class="form-group">
-          <label class="form-label">이름 <span>*</span></label>
-          <input type="text" name="이름" class="form-input" placeholder="성함을 입력해주세요" required />
+<section class="reservation" id="reservation">
+    <div class="container">
+        <h2 class="section-title">방문 예약 신청</h2>
+        <div class="gold-line"></div>
+        <div class="form-wrap">
+            <div class="form-title">무료 방문 상담 신청</div>
+            <div class="form-subtitle">전문 상담사가 빠르게 연락드립니다</div>
+            <form action="https://formspree.io/f/xreyozgj" method="POST">
+                <div class="form-group">
+                    <label>이름 *</label>
+                    <input type="text" name="이름" placeholder="홍길동" required>
+                </div>
+                <div class="form-group">
+                    <label>연락처 *</label>
+                    <input type="tel" name="연락처" placeholder="010-0000-0000" required>
+                </div>
+                <div class="form-group">
+                    <label>관심 평형 *</label>
+                    <select name="관심평형" required>
+                        <option value="">선택해주세요</option>
+                        <option value="25평형(59㎡)">25평형 (59㎡)</option>
+                        <option value="34평형(84㎡)">34평형 (84㎡)</option>
+                        <option value="둘다관심">둘 다 관심있음</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>방문 희망 날짜 *</label>
+                    <input type="date" name="방문희망날짜" required>
+                </div>
+                <button type="submit" class="form-submit">방문 예약 신청하기 →</button>
+                <p class="form-note">* 개인정보는 상담 목적으로만 사용됩니다</p>
+            </form>
         </div>
-        <div class="form-group">
-          <label class="form-label">연락처 <span>*</span></label>
-          <input type="tel" name="연락처" class="form-input" placeholder="010-0000-0000" required />
-        </div>
-        <div class="form-group">
-          <label class="form-label">관심 평형 <span>*</span></label>
-          <select name="관심평형" class="form-select" required>
-            <option value="">평형을 선택해주세요</option>
-            <option value="25평형 (59㎡)">25평형 (59㎡)</option>
-            <option value="34평형 (84㎡)">34평형 (84㎡)</option>
-            <option value="둘 다 관심있음">둘 다 관심있음</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">방문 희망 날짜 <span>*</span></label>
-          <input type="date" name="방문희망날짜" class="form-input" required />
-        </div>
-        <input type="hidden" name="_subject" value="[리더스포레] 방문 예약 신청" />
-        <button type="submit" class="form-btn">방문 예약 신청하기</button>
-        <p class="form-note">
-          개인정보는 방문 예약 상담 목적으로만 사용됩니다.<br>
-          전화 없이 문자 상담도 가능합니다. ☎ 1555-1398
-        </p>
-      </form>
     </div>
-  </div>
 </section>
 
 <!-- 푸터 -->
 <footer>
-  <p class="footer-logo">e편한세상 <span>번영로 리더스포레</span></p>
-  <p>울산광역시 남구 야음동 828-29번지 일원</p>
-  <p>분양상담 ☎ 1555-1398 &nbsp;·&nbsp; 시공 : DL이앤씨</p>
-  <p>평일 10:00~18:00 &nbsp;·&nbsp; 주말 10:00~17:00</p>
-  <div class="footer-bar"></div>
-  <p>※ 본 페이지의 내용은 소비자의 이해를 돕기 위한 것으로 실제와 차이가 있을 수 있습니다.</p>
-  <p>※ 분양가 및 잔여세대는 변동될 수 있으니 정확한 내용은 분양사무소에 문의하시기 바랍니다.</p>
+    <strong>e편한세상 번영로 리더스포레</strong><br>
+    울산광역시 남구 야음동 828-29 · 시공: DL이앤씨<br>
+    분양문의: 1555-1398<br><br>
+    본 페이지의 이미지 및 내용은 실제와 다를 수 있으며, 분양 관련 정확한 정보는 모델하우스에서 확인하시기 바랍니다.
 </footer>
 
-<!-- 하단 고정 CTA -->
-<div class="bottom-bar">
-  <a href="tel:1555-1398" class="bottom-call">☎ 전화 상담</a>
-  <a href="#form" class="bottom-reserve">방문 예약하기</a>
-</div>
-
 <script>
-  function showFloor(id, btn) {
-    document.querySelectorAll('.floor-content').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.floor-tab').forEach(el => el.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    btn.classList.add('active');
-  }
+    function showTab(id) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        event.target.classList.add('active');
+    }
 </script>
 
 </body>
