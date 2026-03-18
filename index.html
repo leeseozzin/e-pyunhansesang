@@ -76,9 +76,72 @@
             border-radius: 2px;
             transition: all 0.3s;
         }
-        .header-phone:hover {
+        .header-phone:hover { background: #b8973a; color: #0d1f3c; }
+
+        /* 카운트다운 바 */
+        .countdown-bar {
             background: #b8973a;
-            color: #0d1f3c;
+            padding: 12px 24px;
+            text-align: center;
+            color: #fff;
+        }
+        .countdown-bar p {
+            font-size: 0.9rem;
+            font-weight: 300;
+            margin-bottom: 8px;
+        }
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+        .countdown-item {
+            text-align: center;
+        }
+        .countdown-number {
+            display: block;
+            font-family: 'Noto Serif KR', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #fff;
+            background: rgba(0,0,0,0.2);
+            padding: 4px 12px;
+            border-radius: 4px;
+            min-width: 56px;
+        }
+        .countdown-label {
+            display: block;
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.85);
+            margin-top: 4px;
+            letter-spacing: 0.05em;
+        }
+        .countdown-sep {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #fff;
+            align-self: flex-start;
+            padding-top: 4px;
+        }
+
+        /* 방문자 알림 */
+        .visitor-bar {
+            background: #0d1f3c;
+            padding: 10px 24px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .visitor-item {
+            color: #c8d8f0;
+            font-size: 0.85rem;
+            font-weight: 300;
+        }
+        .visitor-item span {
+            color: #b8973a;
+            font-weight: 700;
         }
 
         /* 히어로 */
@@ -105,8 +168,19 @@
             font-weight: 700;
             letter-spacing: 0.15em;
             padding: 6px 20px;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
             border-radius: 1px;
+        }
+        .hero-gift {
+            display: inline-block;
+            background: rgba(184,151,58,0.2);
+            border: 1px solid #b8973a;
+            color: #f0d080;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 8px 24px;
+            margin-bottom: 24px;
+            border-radius: 2px;
         }
         .hero h1 {
             font-family: 'Noto Serif KR', serif;
@@ -140,6 +214,47 @@
         .hero-cta:hover {
             background: #d4a940;
             transform: translateY(-2px);
+        }
+
+        /* 상품권 혜택 섹션 */
+        .gift-section {
+            background: linear-gradient(135deg, #1a3a6b, #0d1f3c);
+            padding: 48px 24px;
+            text-align: center;
+        }
+        .gift-box {
+            display: inline-block;
+            background: rgba(184,151,58,0.15);
+            border: 2px solid #b8973a;
+            border-radius: 8px;
+            padding: 32px 48px;
+            max-width: 600px;
+            width: 100%;
+        }
+        .gift-icon { font-size: 3rem; margin-bottom: 16px; }
+        .gift-title {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #f0d080;
+            margin-bottom: 8px;
+        }
+        .gift-desc {
+            font-size: 0.95rem;
+            color: #c8d8f0;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            font-weight: 300;
+        }
+        .gift-badge {
+            display: inline-block;
+            background: #b8973a;
+            color: #fff;
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 6px 20px;
+            border-radius: 2px;
+            letter-spacing: 0.05em;
         }
 
         /* 핵심 혜택 */
@@ -314,6 +429,43 @@
         }
         .trust-label { font-size: 0.9rem; color: #c8d8f0; font-weight: 300; }
 
+        /* 상담 가능 시간 */
+        .consult-status {
+            background: #fff;
+            padding: 32px 24px;
+            text-align: center;
+            border-top: 1px solid #e0d8c8;
+            border-bottom: 1px solid #e0d8c8;
+        }
+        .status-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #4caf50;
+            margin-right: 8px;
+            animation: pulse 1.5s infinite;
+            vertical-align: middle;
+        }
+        .status-dot.offline { background: #f44336; animation: none; }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(76,175,80,0.4); }
+            70% { box-shadow: 0 0 0 8px rgba(76,175,80,0); }
+            100% { box-shadow: 0 0 0 0 rgba(76,175,80,0); }
+        }
+        .status-text {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #0d1f3c;
+            vertical-align: middle;
+        }
+        .status-sub {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 6px;
+            font-weight: 300;
+        }
+
         /* 방문예약 폼 */
         .reservation { background: #fff; }
         .form-wrap {
@@ -324,6 +476,16 @@
             max-width: 600px;
             margin: 0 auto;
         }
+        .form-gift-notice {
+            background: linear-gradient(135deg, #0d1f3c, #1a3a6b);
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            text-align: center;
+            color: #f0d080;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
         .form-title {
             font-family: 'Noto Serif KR', serif;
             font-size: 1.5rem;
@@ -332,7 +494,7 @@
             text-align: center;
             margin-bottom: 8px;
         }
-        .form-subtitle { font-size: 0.9rem; color: #888; text-align: center; margin-bottom: 32px; }
+        .form-subtitle { font-size: 0.9rem; color: #888; text-align: center; margin-bottom: 24px; }
         .form-group { margin-bottom: 20px; }
         .form-group label {
             display: block;
@@ -397,6 +559,49 @@
             transition: all 0.3s;
         }
         .phone-cta a:hover { background: #0d1f3c; color: #b8973a; }
+
+        /* 플로팅 버튼 */
+        .floating-btns {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 999;
+            width: calc(100% - 48px);
+            max-width: 480px;
+        }
+        .float-btn-call {
+            flex: 1;
+            background: #0d1f3c;
+            color: #b8973a;
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            text-align: center;
+            font-family: 'Noto Sans KR', sans-serif;
+            box-shadow: 0 4px 20px rgba(13,31,60,0.4);
+            transition: all 0.3s;
+        }
+        .float-btn-call:hover { background: #1a3a6b; }
+        .float-btn-reserve {
+            flex: 1;
+            background: #b8973a;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            text-align: center;
+            font-family: 'Noto Sans KR', sans-serif;
+            box-shadow: 0 4px 20px rgba(184,151,58,0.4);
+            transition: all 0.3s;
+        }
+        .float-btn-reserve:hover { background: #d4a940; }
 
         /* 완료 팝업 */
         .success-overlay {
@@ -500,6 +705,7 @@
             padding: 32px 24px;
             font-size: 0.82rem;
             line-height: 1.8;
+            padding-bottom: 100px;
         }
         footer strong { color: #8a9bbf; }
 
@@ -510,6 +716,7 @@
             .hero { padding: 80px 16px 60px; }
             .success-box { padding: 32px 20px; }
             .agent-profile { flex-direction: column; text-align: center; }
+            .gift-box { padding: 24px 20px; }
         }
     </style>
 </head>
@@ -521,16 +728,62 @@
     <a href="tel:15551398" class="header-phone">📞 1555-1398</a>
 </header>
 
+<!-- 카운트다운 바 -->
+<div class="countdown-bar">
+    <p>🎁 방문 예약 고객 전원 백화점 상품권 특별 증정 · 혜택 마감까지</p>
+    <div class="countdown-timer">
+        <div class="countdown-item">
+            <span class="countdown-number" id="cd-days">07</span>
+            <span class="countdown-label">일</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-item">
+            <span class="countdown-number" id="cd-hours">00</span>
+            <span class="countdown-label">시간</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-item">
+            <span class="countdown-number" id="cd-mins">00</span>
+            <span class="countdown-label">분</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-item">
+            <span class="countdown-number" id="cd-secs">00</span>
+            <span class="countdown-label">초</span>
+        </div>
+    </div>
+</div>
+
+<!-- 방문자 알림 바 -->
+<div class="visitor-bar">
+    <div class="visitor-item">👀 현재 <span id="visitor-count">18</span>명이 이 페이지를 보고 있습니다</div>
+    <div class="visitor-item">📝 오늘 <span id="reserve-count">5</span>명이 방문 예약했습니다</div>
+</div>
+
 <!-- 히어로 -->
 <section class="hero">
     <div class="hero-content">
         <div class="hero-badge">울산 남구 프리미엄 분양</div>
+        <div class="hero-gift">🎁 방문 예약 고객 전원 · 백화점 상품권 특별 증정</div>
         <h1>울산의 새로운 기준<br><span>e편한세상 번영로 리더스포레</span></h1>
         <p class="hero-sub">
             DL이앤씨 브랜드 아파트 · 트램 2호선 예정 · 선암호수공원 5분<br>
             중도금 무이자 · 계약금 5% 지원
         </p>
         <a href="#reservation" class="hero-cta">지금 방문 예약하기</a>
+    </div>
+</section>
+
+<!-- 상품권 혜택 섹션 -->
+<section class="gift-section">
+    <div class="gift-box">
+        <div class="gift-icon">🎁</div>
+        <div class="gift-title">방문 예약 고객 전원<br>백화점 상품권 특별 증정</div>
+        <div class="gift-desc">
+            방문 상담만 하셔도 감사의 선물을 드립니다<br>
+            계약 강요 없음 · 조건 없음 · 방문 즉시 증정
+        </div>
+        <div class="gift-badge">⚠ 선착순 한정 · 소진 시 조기 마감</div>
     </div>
 </section>
 
@@ -690,6 +943,13 @@
     </div>
 </section>
 
+<!-- 상담 가능 시간 -->
+<div class="consult-status">
+    <span class="status-dot" id="statusDot"></span>
+    <span class="status-text" id="statusText">지금 상담 가능합니다</span>
+    <div class="status-sub" id="statusSub">상담 운영시간 · 오전 10시 ~ 오후 6시</div>
+</div>
+
 <!-- 전화 CTA -->
 <section class="phone-cta">
     <p>궁금하신 점은 지금 바로 전화 문의하세요</p>
@@ -702,6 +962,9 @@
         <h2 class="section-title">방문 예약 신청</h2>
         <div class="gold-line"></div>
         <div class="form-wrap">
+            <div class="form-gift-notice">
+                🎁 지금 예약하시면 백화점 상품권을 드립니다 · 선착순 한정
+            </div>
             <div class="form-title">무료 방문 상담 신청</div>
             <div class="form-subtitle">전문 상담사가 빠르게 연락드립니다</div>
             <form id="reservationForm" action="https://formspree.io/f/xreyozgj" method="POST">
@@ -741,6 +1004,12 @@
     본 페이지의 이미지 및 내용은 실제와 다를 수 있으며, 분양 관련 정확한 정보는 모델하우스에서 확인하시기 바랍니다.
 </footer>
 
+<!-- 플로팅 버튼 -->
+<div class="floating-btns">
+    <a href="tel:15551398" class="float-btn-call">📞 지금 전화하기</a>
+    <a href="#reservation" class="float-btn-reserve">📝 방문 예약하기</a>
+</div>
+
 <!-- 완료 팝업 -->
 <div class="success-overlay" id="successOverlay">
     <div class="success-box">
@@ -748,7 +1017,8 @@
         <div class="success-title">예약이 완료되었습니다!</div>
         <div class="success-desc">
             고객님의 방문 예약을 접수했습니다.<br>
-            담당 상담사가 <strong>24시간 이내</strong> 직접 연락드리겠습니다.
+            담당 상담사가 <strong>24시간 이내</strong> 직접 연락드리겠습니다.<br>
+            <span style="color:#b8973a; font-weight:700;">🎁 백화점 상품권은 방문 시 즉시 증정됩니다</span>
         </div>
         <div class="agent-profile">
             <img src="./images/agent.png" alt="담당 상담사 이서진 부장" class="agent-photo">
@@ -764,7 +1034,85 @@
 </div>
 
 <script>
-    // 평면도 탭
+    // ===== 카운트다운 타이머 (7일 자동 재시작) =====
+    function getEndTime() {
+        const stored = localStorage.getItem('cdEndTime');
+        if (stored) {
+            const end = parseInt(stored);
+            if (end > Date.now()) return end;
+        }
+        const newEnd = Date.now() + 7 * 24 * 60 * 60 * 1000;
+        localStorage.setItem('cdEndTime', newEnd);
+        return newEnd;
+    }
+
+    function updateCountdown() {
+        const end = getEndTime();
+        const now = Date.now();
+        let diff = Math.max(0, Math.floor((end - now) / 1000));
+
+        if (diff === 0) {
+            localStorage.removeItem('cdEndTime');
+            diff = 7 * 24 * 60 * 60;
+        }
+
+        const days = Math.floor(diff / 86400);
+        const hours = Math.floor((diff % 86400) / 3600);
+        const mins = Math.floor((diff % 3600) / 60);
+        const secs = diff % 60;
+
+        document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+        document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+        document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // ===== 실시간 방문자 알림 =====
+    function randomBetween(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    let visitorCount = randomBetween(12, 25);
+    let reserveCount = randomBetween(3, 8);
+
+    document.getElementById('visitor-count').textContent = visitorCount;
+    document.getElementById('reserve-count').textContent = reserveCount;
+
+    setInterval(() => {
+        visitorCount = randomBetween(12, 25);
+        document.getElementById('visitor-count').textContent = visitorCount;
+    }, 10000);
+
+    // ===== 상담 가능 시간 표시 =====
+    function updateConsultStatus() {
+        const now = new Date();
+        const hour = now.getHours();
+        const day = now.getDay();
+        const dot = document.getElementById('statusDot');
+        const text = document.getElementById('statusText');
+        const sub = document.getElementById('statusSub');
+
+        const isWeekday = day >= 1 && day <= 6;
+        const isBusinessHour = hour >= 10 && hour < 18;
+
+        if (isWeekday && isBusinessHour) {
+            dot.classList.remove('offline');
+            text.textContent = '🟢 지금 상담 가능합니다';
+            sub.textContent = '상담 운영시간 · 오전 10시 ~ 오후 6시';
+        } else {
+            dot.classList.add('offline');
+            text.textContent = '🔴 현재 상담 시간 외입니다';
+            sub.textContent = '방문 예약 후 운영시간 내 연락드립니다';
+        }
+    }
+
+    updateConsultStatus();
+    setInterval(updateConsultStatus, 60000);
+
+    // ===== 평면도 탭 =====
     function showTab(id, btn) {
         document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
         document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
@@ -772,7 +1120,7 @@
         btn.classList.add('active');
     }
 
-    // 폼 제출 완료 처리
+    // ===== 폼 제출 완료 처리 =====
     const form = document.getElementById('reservationForm');
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
@@ -788,6 +1136,8 @@
             });
             if (response.ok) {
                 form.reset();
+                reserveCount++;
+                document.getElementById('reserve-count').textContent = reserveCount;
                 document.getElementById('successOverlay').classList.add('show');
             } else {
                 alert('오류가 발생했습니다. 다시 시도해주세요.');
@@ -800,12 +1150,11 @@
         }
     });
 
-    // 팝업 닫기
+    // ===== 팝업 닫기 =====
     function closeSuccess() {
         document.getElementById('successOverlay').classList.remove('show');
     }
 
-    // 팝업 바깥 클릭시 닫기
     document.getElementById('successOverlay').addEventListener('click', function(e) {
         if (e.target === this) closeSuccess();
     });
