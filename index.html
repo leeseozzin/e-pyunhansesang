@@ -1189,16 +1189,17 @@ document.getElementById('reservationForm').addEventListener('submit', async func
     } catch(err){ console.warn('Formspree 오류:', err); }
 
     // Google Sheets
-    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzIygMbfCbgeQ4AHW9LL6UQBdSATOl8D9HYYq1_OfSCAbv7yW-zC2ZQiooG9eazXzdwDA/exec';
-    if(APPS_SCRIPT_URL !== 'YOUR_APPS_SCRIPT_URL_HERE'){
-        try {
-            await fetch(APPS_SCRIPT_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-        } catch(err){ console.warn('Google Sheets 오류:', err); }
-    }
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzIygMbfCbgeQ4AHW9LL6UQBdSATOl8D9HYYq1_OfSCAbv7yW-zC2ZQiooG9eazXzdwDA/exec';
+if(APPS_SCRIPT_URL !== 'YOUR_APPS_SCRIPT_URL_HERE'){
+    try {
+        await fetch(APPS_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+    } catch(err){ console.warn('Google Sheets 오류:', err); }
+}
 
     if(window._incrementReserve) window._incrementReserve();
     document.getElementById('successOverlay').classList.add('show');
