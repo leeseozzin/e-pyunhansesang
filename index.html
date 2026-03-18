@@ -1189,8 +1189,8 @@ document.getElementById('reservationForm').addEventListener('submit', async func
     } catch(err){ console.warn('Formspree 오류:', err); }
 
     // Google Sheets
-    const APPS_SCRIPT_URL = 'https://docs.google.com/spreadsheets/d/1MbJzFXWGep0JBbZxJrL6hd5V2Brn6Hn_4U9PVn_-07E/edit?usp=drivesdk';
-    if(APPS_SCRIPT_URL !== 'https://docs.google.com/spreadsheets/d/1MbJzFXWGep0JBbZxJrL6hd5V2Brn6Hn_4U9PVn_-07E/edit?usp=drivesdk'){
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxq1y3g-t_i1eZl-FCL9YLxq_Fm7yx3NraejHO5bJMjrNN6YLextt6ZderbljD72nIT/exec';
+    if(APPS_SCRIPT_URL !== 'https://script.google.com/macros/s/AKfycbxq1y3g-t_i1eZl-FCL9YLxq_Fm7yx3NraejHO5bJMjrNN6YLextt6ZderbljD72nIT/exec'){
         try {
             await fetch(APPS_SCRIPT_URL, {
                 method: 'POST',
