@@ -1206,6 +1206,13 @@ if(APPS_SCRIPT_URL !== 'YOUR_APPS_SCRIPT_URL_HERE'){
     } catch(err){ console.warn('Google Sheets 오류:', err); }
 }
 
+   // 네이버 애널리틱스 전환 추적
+if(window.wcs){
+  var _nasa={};
+  _nasa["cnv"] = wcs.cnv("1","1");
+  wcs_do(_nasa);
+}
+
     if(window._incrementReserve) window._incrementReserve();
     document.getElementById('successOverlay').classList.add('show');
     this.reset();
